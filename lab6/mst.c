@@ -32,7 +32,6 @@ void addEdge(struct Graph* graph, int src, int dest, int weight) {
 }
 
 // Function to print the minimum spanning tree
-// Function to print the minimum spanning tree
 int compare(const void* p1, const void* p2) {
   struct Edge* e1 = (struct Edge*)p1;
   struct Edge* e2 = (struct Edge*)p2;
@@ -64,9 +63,9 @@ void printMST(int parent[], struct Graph* graph) {
 
 // Function to construct and find the minimum spanning tree
 void findMinimumSpanningTree(struct Graph* graph) {
-    int parent[graph->V]; // Array to store constructed MST
-    int key[graph->V]; // Key values used to pick minimum weight edge
-    bool mstSet[graph->V]; // To represent set of vertices included in MST
+    int parent[graph->V];
+    int key[graph->V];
+    bool mstSet[graph->V];
 
     // Initialize all keys as INFINITE and mstSet[] as false
     for (int i = 0; i < graph->V; i++) {
@@ -75,8 +74,8 @@ void findMinimumSpanningTree(struct Graph* graph) {
     }
 
     // Always include the first vertex in MST
-    key[0] = 0; // Make key 0 so that this vertex is picked as the first vertex
-    parent[0] = -1; // First node is always the root of MST
+    key[0] = 0;
+    parent[0] = -1;
 
     // The MST will have V vertices
     for (int count = 0; count < graph->V - 1; count++) {
@@ -125,8 +124,6 @@ int main() {
 
     // Find the minimum spanning tree
     findMinimumSpanningTree(graph);
-
-    // Free dynamically allocated memory
     free(graph->edges);
     free(graph);
 

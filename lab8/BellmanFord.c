@@ -1,3 +1,4 @@
+//Implement Bellman Ford Algorithm in c
 #include <stdio.h>
 #include <limits.h>
 
@@ -44,7 +45,7 @@ void bellmanFord(int numVertices, int numEdges, struct Edge edges[], int source)
     for (int i = 0; i < numEdges; i++) {
         if (distances[edges[i].source] != INT_MAX &&
             distances[edges[i].source] + edges[i].weight < distances[edges[i].destination]) {
-            printf("Graph contains a negative weight cycle. Bellman-Ford does not work for this graph.\n");
+            printf("Graph contains a negative weight cycle.\n");
             return;
         }
     }
