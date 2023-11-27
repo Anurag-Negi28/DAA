@@ -1,3 +1,6 @@
+/**lab-4 Q2. Find the value of  (1+i)^n where i = sqrt (-1) in O(log2n) time and O(log2n) space.
+Input: n
+Output: (1+i)^n*/
 #include <stdio.h>
 #include <complex.h>
 

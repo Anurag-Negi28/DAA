@@ -1,51 +1,45 @@
-//lab-2 Q1. Matrix multiplication of 2 square matrices.
-#include<stdio.h>
-int main()
-{
-    printf("Enter size of square matrices\n");
-    int size;
-    scanf("%d",&size);
-    int m1[size][size]; int m2[size][size];
-    int result[size][size];
+/**lab-1 Q2) Input – Two strings made of characters
+Output – Find out if the smaller string exists in the larger one. If yes, how many times?
+*/
+#include <stdio.h>
+#include <string.h>
 
-    printf("Enter elements of first matrix\n");
-    for(int i=0;i<size;i++)
-    {
-        for(int j=0;j<size;j++)
-        {
-            scanf("%d",&m1[i][j]);
+int countSubstring(const char *str, const char *sub) {
+    int count = 0;
+    int subLen = strlen(sub);
+
+    while (*str) {
+        if (strncmp(str, sub, subLen) == 0) {
+            count++;
         }
+        str++;
     }
 
-     printf("Enter elements of second matrix\n");
-    for(int i=0;i<size;i++)
-    {
-        for(int j=0;j<size;j++)
-        {
-            scanf("%d",&m2[i][j]);
-        }
+    return count;
+}
+
+int main() {
+    char largerString[100], smallerString[50];
+
+    // Input larger string
+    printf("Enter the larger string: ");
+    fgets(largerString, sizeof(largerString), stdin);
+    largerString[strcspn(largerString, "\n")] = '\0'; // Remove newline character
+
+    // Input smaller string
+    printf("Enter the smaller string: ");
+    fgets(smallerString, sizeof(smallerString), stdin);
+    smallerString[strcspn(smallerString, "\n")] = '\0'; // Remove newline character
+
+    // Find and count occurrences
+    int occurrences = countSubstring(largerString, smallerString);
+
+    // Output the result
+    if (occurrences > 0) {
+        printf("The smaller string exists in the larger one, and it occurs %d times.\n", occurrences);
+    } else {
+        printf("The smaller string does not exist in the larger one.\n");
     }
 
-    for(int i=0;i<size;i++)
-    {
-        for(int j=0;j<size;j++)
-        {
-            result[i][j]=0;
-           for(int k=0;k<size;k++) 
-           {
-            result[i][j] += m1[i][k] * m2[k][j];
-           }
-        }
-    }
-    printf("Matrix obtained after multiplication is\n");
-    for(int i=0;i<size;i++)
-    {
-        for(int j=0;j<size;j++)
-        {
-            printf("%d ",result[i][j]);
-        }
-        printf("\n");
-    }
-   return 0;
-
+    return 0;
 }

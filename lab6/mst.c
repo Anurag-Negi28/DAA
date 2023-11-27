@@ -1,3 +1,23 @@
+/**lab-6 Q1. Input: A file containing following details for some n 
+Graph with n vertices in the format
+V1 : (e1, w1) (e2, w2) (e3,w3)
+V2 : (e4, w4) (e5, w5)
+.				  
+.
+.
+Vn: (ei,wi) (ej,wj)
+
+Output: Minimum spanning tree in adjacency list format
+
+E.g. - Input
+1: ((1,2),1) ((1,3),1)
+2: ((2,1),1) ((2,3),1)
+3: ((3,1),1) ((3,2),1)
+
+Output
+1: ((1,2),1) ((1,3),1)
+2: ((2,1),1)
+3: ((3,1),1)*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
