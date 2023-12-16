@@ -1,4 +1,4 @@
-#include <stdio.h>
+/**in insertion sort use names as input instead of integers*/#include <stdio.h>
 #include <string.h>
 
 int main() {
